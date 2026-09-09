@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For You ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+        <!-- شاشة البداية -->
+        <section id="welcomePage" class="page welcome-page">
+
+            <div class="welcome-hearts">♡ ♥ ♡</div>
+
+            <div class="welcome-card">
+
+                <div class="welcome-icon">💌</div>
+
+                <h1>A little something for you...</h1>
+
+                <p>I made this just for you ❤️</p>
+
+                <button id="startButton">
+                    Open it 💕
+                </button>
+
+            </div>
+
+        </section>
+
+        <section id="page1" class="page hidden">
+
+            <div class="heart">♡</div>
+
+            <h1>How much do you love me?</h1>
+
+            <p id="percentage">0%</p>
+
+            <input type="range"
+                   id="loveSlider"
+                   min="0"
+                   max="100"
+                   value="0">
+
+            <button id="continueButton">
+                Continue ❤️
+            </button>
+
+        </section>
+
+
+        <!-- الصفحة الثانية -->
+        <section id="page2" class="page hidden">
+
+            <div class="heart">♥</div>
+
+            <h1>Correct answer! 💕</h1>
+
+            <p>You reached the perfect answer.</p>
+
+            <button id="nextButton">
+                Next →
+            </button>
+
+        </section>
+
+
+        <!-- الصفحة الثالثة -->
+        <!-- الصفحة الثالثة -->
+        <section id="page3" class="page hidden">
+
+            <div class="love-pass">
+                <div class="pass-photo">
+                    <img src="./images/photo1.jpeg.jpeg" alt="Our memory">
+                </div>
+
+                <h1>Our Little Memories 💕</h1>
+
+                <p>
+                    A little collection of some of my favorite memories.
+                </p>
+                <div class="music-player">
+
+                    <button id="musicButton" class="music-button">
+                        🎵 Play our song
+                    </button>
+
+                    <audio id="ourSong" preload="auto">
+                        <source src="music/raindance.mp3" type="audio/mpeg">
+                    </audio>
+
+                </div>
+                <div class="mini-photos">
+
+                    <img src="./images/photo2.jpeg.jpeg" alt="Memory">
+
+                    <img src="./images/photo3.jpeg.jpeg" alt="Memory">
+
+                    <img src="./images/photo4.jpeg.jpeg" alt="Memory">
+
+                </div>
+
+                <button id="letterButton">
+                    Open the letter 💌
+                </button>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- الصفحة الأخيرة -->
+        <section id="page4" class="page hidden">
+
+            <div class="letter">
+
+                <div class="letter-decoration">♡</div>
+
+                <p class="letter-title">
+                    Medo, my heart ❤️
+                </p>
+
+
+
+                <p>
+                    I love you more than I could ever put into words.
+                    No words could fully explain how much you mean to me.
+                    You are my safe place, my comfort, and my peace
+                    when everything feels overwhelming.
+                </p>
+
+                <p>
+                    You are the last thought on my mind before I fall asleep
+                    and the first thought in my heart when I wake up.
+                    Sometimes I just sit quietly and think about how lucky
+                    I am to have you in my life.
+                </p>
+
+                <p>
+                    You are truly one of a kind, and no matter what life brings,
+                    I choose you every single day — without doubt,
+                    without hesitation, always. ❤️
+                </p>
+
+                <div class="letter-signature">
+                    <span>Forever yours,</span>
+                    <strong>jojetak ❤️</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script>
+        const slider = document.getElementById("loveSlider");
+        const percentage = document.getElementById("percentage");
+        const continueButton = document.getElementById("continueButton");
+        const nextButton = document.getElementById("nextButton");
+        const letterButton = document.getElementById("letterButton");
+        const startButton = document.getElementById("startButton");
+        const musicButton = document.getElementById("musicButton");
+const ourSong = document.getElementById("ourSong");
+
+musicButton.addEventListener("click", function () {
+
+    if (ourSong.paused) {
+
+        ourSong.play();
+        musicButton.textContent = "⏸ Pause our song";
+
+    } else {
+
+        ourSong.pause();
+        musicButton.textContent = "🎵 Play our song";
+
+    }
+
+});
+        // زرار Open it من شاشة البداية
+        startButton.addEventListener("click", function () {
+
+        document.getElementById("welcomePage").classList.add("hidden");
+        document.getElementById("page1").classList.remove("hidden");
+
+        });
+
+        // السلايدر والنسبة
+        slider.addEventListener("input", function () {
+
+        percentage.textContent = slider.value + "%";
+
+        });
+
+        // من الصفحة الأولى للـ Correct Answer
+        continueButton.addEventListener("click", function () {
+
+        if (slider.value == 100) {
+
+        document.getElementById("page1").classList.add("hidden");
+        document.getElementById("page2").classList.remove("hidden");
+
+        } else {
+
+        alert("Move the slider to 100% ❤️");
+
+        }
+
+        });
+
+        // من Correct Answer للصفحة الثالثة
+        nextButton.addEventListener("click", function () {
+
+        document.getElementById("page2").classList.add("hidden");
+        document.getElementById("page3").classList.remove("hidden");
+
+        });
+
+        // من الصفحة الثالثة للجواب الأخير
+        letterButton.addEventListener("click", function () {
+
+        document.getElementById("page3").classList.add("hidden");
+        document.getElementById("page4").classList.remove("hidden");
+
+        });
+    </script>
+    <!-- Floating hearts -->
+    <div class="floating-hearts">
+        <span>♡</span>
+        <span>♥</span>
+        <span>♡</span>
+        <span>♥</span>
+        <span>♡</span>
+        <span>♥</span>
+        <span>♡</span>
+        <span>♥</span>
+    </div>
+
+    <!-- Footer -->
+    <div class="made-with-love">
+        Made with love for Medo ❤️
+    </div>
+
+</body>
+</html>
+
+<!-- Footer -->
+<div class="made-with-love">
+    Made with love for Medo ❤️
+</div>
+
+</body>
+</html>
+
+

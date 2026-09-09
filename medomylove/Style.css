@@ -1,0 +1,1030 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background: radial-gradient(circle at 20% 20%, #ffeef4 0 8%, transparent 9%), radial-gradient(circle at 80% 80%, #ffdce8 0 10%, transparent 11%), linear-gradient(135deg, #f9d9e4, #fff0f5);
+    color: #71384d;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 520px;
+    min-height: 100vh;
+    margin: auto;
+    position: relative;
+}
+
+.page {
+    min-height: 100vh;
+    padding: 35px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: pageAppear 0.7s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+/* القلوب */
+
+.heart {
+    font-size: 90px;
+    color: #c94d73;
+    margin-bottom: 15px;
+    animation: heartbeat 1.3s infinite;
+}
+
+/* العناوين */
+
+h1 {
+    margin: 10px 0 15px;
+    color: #8d2947;
+    font-size: 32px;
+    line-height: 1.25;
+}
+
+p {
+    color: #754052;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* النسبة */
+
+#percentage {
+    margin: 10px 0;
+    font-size: 45px;
+    font-weight: bold;
+    color: #c13e68;
+}
+
+/* السلايدر */
+
+#loveSlider {
+    width: 88%;
+    margin: 25px 0;
+    accent-color: #c94d73;
+    cursor: pointer;
+}
+
+/* كل الأزرار */
+
+button {
+    border: none;
+    padding: 14px 30px;
+    border-radius: 999px;
+    background: #c94d73;
+    color: white;
+    font-size: 17px;
+    font-family: inherit;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(150, 50, 85, 0.2);
+    transition: 0.25s ease;
+}
+
+    button:hover {
+        transform: translateY(-3px) scale(1.03);
+    }
+
+    button:active {
+        transform: scale(0.97);
+    }
+
+/* مكان الصورة مؤقتًا */
+
+.photo-box {
+    width: 270px;
+    height: 320px;
+    margin: 25px 0;
+    border-radius: 25px;
+    background: #fff7fa;
+    border: 3px solid #edb5c6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 65px;
+    box-shadow: 0 15px 35px rgba(120, 50, 75, 0.15);
+}
+
+/* شكل الخطاب */
+
+.letter {
+    width: 100%;
+    max-width: 440px;
+    padding: 35px 28px;
+    background: #fffaf7;
+    border-radius: 12px;
+    border: 2px solid #e4a8ba;
+    box-shadow: 0 15px 35px rgba(100, 40, 60, 0.18);
+    position: relative;
+}
+
+    /* تأثير ورقة */
+
+    .letter::before {
+        content: "♡";
+        position: absolute;
+        top: 12px;
+        right: 18px;
+        font-size: 28px;
+        color: #e5a2b6;
+    }
+
+    .letter h1 {
+        font-size: 28px;
+    }
+
+    .letter p {
+        font-family: Georgia, serif;
+        font-size: 17px;
+    }
+
+/* حركة ظهور الصفحة */
+
+@keyframes pageAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* حركة القلب */
+
+@keyframes heartbeat {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.13);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* قلوب صغيرة في الخلفية */
+
+body::before {
+    content: "♡  ♥  ♡  ♥  ♡";
+    position: fixed;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    color: rgba(180, 60, 100, 0.35);
+    letter-spacing: 25px;
+    pointer-events: none;
+}
+.love-pass {
+    width: 100%;
+    max-width: 430px;
+    background: #fff8fa;
+    padding: 22px;
+    border-radius: 25px;
+    border: 2px solid #e8aabd;
+    box-shadow: 0 15px 35px rgba(120, 50, 75, 0.18);
+}
+
+.pass-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    color: #b83f68;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.pass-photo {
+    width: 100%;
+    height: 330px;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #f5dce4;
+}
+
+    .pass-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+.love-pass h1 {
+    font-size: 25px;
+    margin-top: 22px;
+}
+
+.mini-photos {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+    .mini-photos img {
+        width: 85px;
+        height: 85px;
+        object-fit: cover;
+        border-radius: 14px;
+        border: 2px solid #e8aabd;
+    }
+
+.love-pass button {
+    margin-top: 5px;
+}
+/* =========================
+   FINAL LETTER
+========================= */
+
+.letter {
+    width: 100%;
+    max-width: 450px;
+    padding: 45px 32px 40px;
+    background: linear-gradient( rgba(255, 250, 247, 0.96), rgba(255, 246, 242, 0.96) );
+    border: 2px solid #e4a8ba;
+    border-radius: 8px;
+    box-shadow: 0 18px 40px rgba(100, 40, 60, 0.18);
+    position: relative;
+    text-align: left;
+    animation: letterOpen 1s ease;
+}
+
+.letter-decoration {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 32px;
+    color: #c94d73;
+}
+
+.letter-title {
+    margin: 0 0 25px;
+    text-align: center;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 27px !important;
+    font-weight: bold;
+    color: #8d2947 !important;
+}
+
+.letter-greeting {
+    margin-bottom: 20px;
+    font-family: Georgia, serif;
+    font-size: 19px !important;
+    font-weight: bold;
+    color: #71384d !important;
+}
+
+.letter p:not(.letter-title):not(.letter-greeting) {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #633b49;
+    margin: 0 0 20px;
+}
+
+.letter-signature {
+    margin-top: 30px;
+    text-align: right;
+    font-family: Georgia, serif;
+    color: #71384d;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+    .letter-signature span {
+        font-size: 16px;
+    }
+
+    .letter-signature strong {
+        font-size: 21px;
+        color: #b83f68;
+    }
+
+@keyframes letterOpen {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+/* =========================
+   CUTE FIRST PAGE
+========================= */
+
+#page1 {
+    position: relative;
+    overflow: hidden;
+}
+
+    #page1::before {
+        content: "♡  ♡  ♥  ♡  ♥  ♡  ♡";
+        position: absolute;
+        top: 12%;
+        left: -20px;
+        width: 120%;
+        font-size: 25px;
+        letter-spacing: 18px;
+        color: rgba(201, 77, 115, 0.25);
+        transform: rotate(-8deg);
+        pointer-events: none;
+    }
+
+    #page1::after {
+        content: "♥  ♡  ♡  ♥  ♡";
+        position: absolute;
+        bottom: 13%;
+        left: -10px;
+        width: 120%;
+        font-size: 22px;
+        letter-spacing: 25px;
+        color: rgba(201, 77, 115, 0.22);
+        transform: rotate(7deg);
+        pointer-events: none;
+    }
+
+    #page1 .heart {
+        position: relative;
+        z-index: 2;
+        font-size: 105px;
+        text-shadow: 0 8px 20px rgba(190, 60, 100, 0.18);
+    }
+
+    #page1 h1,
+    #page1 p,
+    #page1 input,
+    #page1 button {
+        position: relative;
+        z-index: 2;
+    }
+
+    #page1 h1 {
+        max-width: 380px;
+        font-size: 31px;
+        margin-top: 5px;
+    }
+
+    #page1 #percentage {
+        margin: 5px 0 10px;
+        font-size: 48px;
+    }
+
+    #page1 #loveSlider {
+        height: 8px;
+        margin: 20px 0 30px;
+    }
+
+    #page1 #continueButton {
+        padding: 15px 34px;
+        font-size: 18px;
+        box-shadow: 0 10px 25px rgba(150, 50, 85, 0.25);
+    }
+/* =========================
+   LOVE PASS FINAL LOOK
+========================= */
+
+#page3 {
+    padding: 25px 18px;
+}
+
+.love-pass {
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+    background: linear-gradient(145deg, #fffafb, #fff1f5);
+    border: 2px solid #e3a4b8;
+    box-shadow: 0 20px 45px rgba(120, 50, 75, 0.20);
+}
+
+    .love-pass::before {
+        content: "♡";
+        position: absolute;
+        top: 70px;
+        right: 12px;
+        font-size: 55px;
+        color: rgba(201, 77, 115, 0.12);
+        transform: rotate(15deg);
+    }
+
+    .love-pass::after {
+        content: "♥";
+        position: absolute;
+        bottom: 120px;
+        left: 10px;
+        font-size: 45px;
+        color: rgba(201, 77, 115, 0.10);
+        transform: rotate(-15deg);
+    }
+
+.pass-top {
+    border-bottom: 1px dashed #e2a5b7;
+    padding-bottom: 14px;
+}
+
+.pass-photo {
+    height: 340px;
+    border: 4px solid white;
+    box-shadow: 0 8px 20px rgba(100, 40, 60, 0.15);
+}
+
+.love-pass h1 {
+    margin-bottom: 8px;
+    font-size: 25px;
+}
+
+.love-pass > p {
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+.music-player {
+    margin: 20px 0;
+    padding: 15px;
+    background: #fff;
+    border-radius: 18px;
+    border: 1px solid #ecc0cd;
+    box-shadow: 0 5px 15px rgba(120, 50, 75, 0.08);
+}
+
+    .music-player span {
+        display: block;
+        margin-bottom: 10px;
+        color: #9c3456;
+        font-weight: bold;
+    }
+
+    .music-player audio {
+        width: 100%;
+    }
+
+.mini-photos {
+    position: relative;
+    z-index: 2;
+    margin: 22px 0;
+}
+
+    .mini-photos img {
+        width: 88px;
+        height: 88px;
+        border-radius: 50%;
+        border: 3px solid white;
+        box-shadow: 0 5px 12px rgba(100, 40, 60, 0.15);
+    }
+
+.love-pass button {
+    position: relative;
+    z-index: 3;
+    margin-top: 8px;
+}
+@media (max-width: 600px) {
+
+    .page {
+        padding: 25px 16px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    #page1 .heart {
+        font-size: 85px;
+    }
+
+    #page1 h1 {
+        font-size: 27px;
+    }
+
+    #percentage {
+        font-size: 40px;
+    }
+
+    .love-pass {
+        padding: 16px;
+    }
+
+    .pass-photo {
+        height: 300px;
+    }
+
+    .love-pass h1 {
+        font-size: 22px;
+    }
+
+    .mini-photos {
+        gap: 7px;
+    }
+
+        .mini-photos img {
+            width: 72px;
+            height: 72px;
+        }
+
+    .letter {
+        padding: 38px 22px 32px;
+    }
+
+    .letter-title {
+        font-size: 24px !important;
+    }
+
+    .letter p:not(.letter-title):not(.letter-greeting) {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+}
+/* =========================
+   FINAL CUTE TOUCHES ✨
+========================= */
+
+/* حركة أنعم للصفحات */
+.page {
+    animation: softPageAppear 0.8s ease both;
+}
+
+@keyframes softPageAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* الأزرار */
+button {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+    button:hover {
+        transform: translateY(-3px) scale(1.04);
+        box-shadow: 0 12px 25px rgba(150, 50, 85, 0.28);
+    }
+
+    button:active {
+        transform: scale(0.96);
+    }
+
+
+/* السلايدر */
+#loveSlider {
+    appearance: none;
+    height: 8px;
+    border-radius: 999px;
+    background: linear-gradient( to right, #c94d73, #f2b6c8 );
+}
+
+    #loveSlider::-webkit-slider-thumb {
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #c94d73;
+        border: 4px solid white;
+        box-shadow: 0 3px 10px rgba(120, 40, 70, 0.25);
+        cursor: pointer;
+    }
+
+
+/* الصور الصغيرة */
+.mini-photos img {
+    transition: transform 0.3s ease;
+}
+
+    .mini-photos img:nth-child(1) {
+        transform: rotate(-5deg);
+    }
+
+    .mini-photos img:nth-child(2) {
+        transform: translateY(-5px) rotate(2deg);
+    }
+
+    .mini-photos img:nth-child(3) {
+        transform: rotate(5deg);
+    }
+
+    .mini-photos img:hover {
+        transform: translateY(-8px) scale(1.08);
+    }
+
+
+/* الصورة الرئيسية */
+.pass-photo img {
+    transition: transform 0.5s ease;
+}
+
+.pass-photo:hover img {
+    transform: scale(1.03);
+}
+
+
+/* تفاصيل صغيرة في الـ Letter */
+.letter {
+    background-color: #fffaf7;
+    background-image: radial-gradient( rgba(201, 77, 115, 0.08) 1px, transparent 1px );
+    background-size: 18px 18px;
+}
+
+    .letter::after {
+        content: "♡";
+        position: absolute;
+        bottom: 15px;
+        left: 18px;
+        font-size: 28px;
+        color: rgba(201, 77, 115, 0.25);
+    }
+
+
+/* لمسة صغيرة للـ Love Pass */
+.love-pass {
+    animation: passFloat 4s ease-in-out infinite;
+}
+
+@keyframes passFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+
+/* الموبايل */
+@media (max-width: 600px) {
+
+    .page {
+        min-height: 100svh;
+    }
+
+    .love-pass {
+        animation: none;
+    }
+
+    .pass-photo {
+        height: 290px;
+    }
+
+    button {
+        min-height: 48px;
+    }
+}
+/* =========================
+   Floating Hearts
+   ========================= */
+
+.floating-hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 999;
+}
+
+    .floating-hearts span {
+        position: absolute;
+        bottom: -50px;
+        font-size: 25px;
+        color: rgba(201, 77, 115, 0.45);
+        animation: floatingHeart 8s linear infinite;
+    }
+
+        /* أماكن مختلفة للقلوب */
+
+        .floating-hearts span:nth-child(1) {
+            left: 8%;
+            animation-delay: 0s;
+            animation-duration: 7s;
+        }
+
+        .floating-hearts span:nth-child(2) {
+            left: 20%;
+            animation-delay: 2s;
+            animation-duration: 9s;
+        }
+
+        .floating-hearts span:nth-child(3) {
+            left: 35%;
+            animation-delay: 4s;
+            animation-duration: 8s;
+        }
+
+        .floating-hearts span:nth-child(4) {
+            left: 50%;
+            animation-delay: 1s;
+            animation-duration: 10s;
+        }
+
+        .floating-hearts span:nth-child(5) {
+            left: 65%;
+            animation-delay: 3s;
+            animation-duration: 7s;
+        }
+
+        .floating-hearts span:nth-child(6) {
+            left: 78%;
+            animation-delay: 5s;
+            animation-duration: 9s;
+        }
+
+        .floating-hearts span:nth-child(7) {
+            left: 88%;
+            animation-delay: 2s;
+            animation-duration: 8s;
+        }
+
+        .floating-hearts span:nth-child(8) {
+            left: 45%;
+            animation-delay: 6s;
+            animation-duration: 11s;
+        }
+
+@keyframes floatingHeart {
+
+    0% {
+        transform: translateY(0) rotate(0deg) scale(0.7);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(-50vh) rotate(20deg) scale(1);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(-20deg) scale(1.2);
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   Made with love
+   ========================= */
+
+.made-with-love {
+    position: fixed;
+    bottom: 12px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1000;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: rgba(141, 41, 71, 0.65);
+    pointer-events: none;
+}
+/* =========================
+   Welcome Page
+   ========================= */
+
+.welcome-page {
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle at 20% 20%, #ffe5ee, transparent 30%), radial-gradient(circle at 80% 80%, #ffd5e3, transparent 30%), linear-gradient(135deg, #f8d7e2, #fff0f5);
+}
+
+.welcome-card {
+    width: 100%;
+    max-width: 390px;
+    padding: 45px 28px;
+    background: rgba(255, 250, 252, 0.9);
+    border: 2px solid #e5a8bb;
+    border-radius: 30px;
+    box-shadow: 0 20px 45px rgba(120, 50, 75, 0.18);
+    animation: welcomeCard 1s ease;
+}
+
+.welcome-icon {
+    font-size: 75px;
+    margin-bottom: 10px;
+    animation: heartbeat 1.4s infinite;
+}
+
+.welcome-card h1 {
+    font-size: 29px;
+    margin: 10px 0 15px;
+}
+
+.welcome-card p {
+    font-size: 18px;
+    margin-bottom: 28px;
+}
+
+.welcome-card button {
+    font-size: 18px;
+    padding: 15px 35px;
+}
+
+.welcome-hearts {
+    position: absolute;
+    top: 12%;
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+    letter-spacing: 18px;
+    color: rgba(201, 77, 115, 0.35);
+    animation: welcomeFloat 3s ease-in-out infinite;
+}
+
+@keyframes welcomeCard {
+
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes welcomeFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+/* =========================
+   Scrapbook Photos
+   ========================= */
+
+.mini-photos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 25px 0;
+    position: relative;
+}
+
+    .mini-photos img {
+        width: 92px;
+        height: 105px;
+        object-fit: cover;
+        border-radius: 5px;
+        border: 7px solid white;
+        box-shadow: 0 6px 15px rgba(100, 40, 60, 0.18);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .mini-photos img:nth-child(1) {
+            transform: rotate(-8deg);
+        }
+
+        .mini-photos img:nth-child(2) {
+            transform: translateY(-10px) rotate(2deg);
+        }
+
+        .mini-photos img:nth-child(3) {
+            transform: rotate(8deg);
+        }
+
+        .mini-photos img:hover {
+            transform: translateY(-8px) scale(1.08) rotate(0deg);
+            box-shadow: 0 12px 22px rgba(100, 40, 60, 0.25);
+            z-index: 5;
+        }
+
+@media (max-width: 600px) {
+
+    .mini-photos {
+        gap: 6px;
+    }
+
+        .mini-photos img {
+            width: 78px;
+            height: 90px;
+        }
+}
+/* =========================
+   Smooth Page Transitions
+   ========================= */
+
+.page:not(.hidden) {
+    animation: smoothPage 0.8s ease both;
+}
+
+@keyframes smoothPage {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+/* =========================
+   iPhone / Mobile Fix
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+button {
+    max-width: 100%;
+}
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .page {
+        width: 100%;
+        min-height: 100svh;
+        padding: 25px 14px;
+    }
+
+    .welcome-card,
+    .love-pass,
+    .letter {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .welcome-card {
+        padding: 35px 20px;
+    }
+
+        .welcome-card h1 {
+            font-size: 25px;
+        }
+
+    .letter {
+        padding: 35px 20px 30px;
+    }
+
+        .letter p:not(.letter-title):not(.letter-greeting) {
+            font-size: 15.5px;
+            line-height: 1.7;
+        }
+
+    .music-button {
+        width: 100%;
+    }
+
+    .made-with-love {
+        font-size: 11px;
+        bottom: 7px;
+    }
+}
